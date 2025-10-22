@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Rina Rahmawati</title>
+    <style>
+        /* Variabel warna */
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ff6b6b;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Reset dan gaya dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+        }
+        
+        .profile {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 30px;
+            border: 4px solid white;
+            box-shadow: var(--shadow);
+        }
+        
+        .avatar i {
+            font-size: 50px;
+            color: white;
+        }
+        
+        .header-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Bagian utama */
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .card-title i {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .card-title h2 {
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            min-width: 120px;
+            color: var(--primary);
+        }
+        
+        /* Skill bars */
+        .skill {
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        /* Hobi */
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .hobby {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hobby i {
+            margin-right: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .avatar {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .header-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+                <div class="avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Rina Rahmawati</h1>
+                    <p>Pelajar TJKT | SMK Komputama Majenang</p>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <section class="card">
+                <div class="card-title">
+                    <i class="fas fa-user"></i>
+                    <h2>Informasi Pribadi</h2>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Nama Lengkap</span>
+                    <span>Rina Rahmawati</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Kelas</span>
+                    <span>X TJKT 5</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Alamat</span>
+                    <span>Ujungbarang, Majenang</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Sekolah</span>
+                    <span>SMK Komputama Majenang</span>
+                </div>
+            </section>
+            
+            <section class="card">
+                <div class="card-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Pendidikan</h2>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">2023 - Sekarang</span>
+                    <span>SMK Komputama Majenang<br>Jurusan TJKT (Teknik Jaringan Komputer dan Telekomunikasi)</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">2020 - 2023</span>
+                    <span>SMP Negeri 1 Majenang</span>
+                </div>
+            </section>
+            
+            <section class="card">
+                <div class="card-title">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Keahlian</h2>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Jaringan Komputer</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Pemrograman Dasar</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Perakitan Komputer</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        <span>Desain Grafis</span>
+                        <span>65%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 65%"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="card">
+                <div class="card-title">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Prestasi</h2>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">2023</span>
+                    <span>Juara 1 Lomba Jaringan Komputer Tingkat Sekolah</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">2022</span>
+                    <span>Peserta Terbaik Praktikum TJKT</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">2021</span>
+                    <span>Juara 2 Olimpiade Matematika Tingkat Kecamatan</span>
+                </div>
+            </section>
+            
+            <section class="card">
+                <div class="card-title">
+                    <i class="fas fa-heart"></i>
+                    <h2>Hobi & Minat</h2>
+                </div>
+                <div class="hobbies">
+                    <div class="hobby">
+                        <i class="fas fa-laptop"></i>
+                        <span>Teknologi</span>
+                    </div>
+                    <div class="hobby">
+                        <i class="fas fa-book"></i>
+                        <span>Membaca</span>
+                    </div>
+                    <div class="hobby">
+                        <i class="fas fa-music"></i>
+                        <span>Musik</span>
+                    </div>
+                    <div class="hobby">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Desain</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="card">
+                <div class="card-title">
+                    <i class="fas fa-envelope"></i>
+                    <h2>Kontak</h2>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Email</span>
+                    <span>rina.rahmawati@example.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Telepon</span>
+                    <span>+62 812 3456 7890</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Instagram</span>
+                    <span>@rina_rahmawati</span>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Rina Rahmawati - CV Interaktif</p>
+        </footer>
+    </div>
+</body>
+</html>
